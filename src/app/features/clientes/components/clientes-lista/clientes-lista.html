@@ -1,0 +1,47 @@
+<!-- TO DO: colocar modulos proprios:
+ - Barra de pesquisa
+ - Botao de cadastrar cliente
+ -->
+
+<!-- TO DO: Modals
+ - Criar modal para cadastrar o cliente
+ - Criar modal para atualizar o cliente
+ - Criar modal para confirmar exclusao do cliente -->
+
+<!-- TO DO: funcoes
+ - Implementar barra de pesquisa
+ - Implementar o deletar
+ - Implementar o atualizar
+ - Implementar o cadastrar
+ - Integrar com backend -->
+
+<!-- Barra de pesquisa -->
+<div>
+    <label for="barra_pesquisa">Pesquisar </label>
+    <input type="text" name="barra_pesquisa">
+</div>
+
+
+
+<!-- Lista dos clientes -->
+<div>
+    @for (cliente of clientes; track $index) {
+    <div class="item_cliente">
+        <p>Nome: {{cliente.nome}}</p>
+        @if (cliente.Tipo_Pessoa==="CPF") {
+            <p>CPF: {{cliente.id_fiscal}}</p>
+        } @else {
+            <p>CNPJ: {{cliente.id_fiscal}}</p>
+        }
+        <p>Celular: {{cliente.celular}}</p>
+    
+        <div>
+            <button class="botao_lista" id="atualizar" (click)="atualizar(cliente.id)">Atualizar</button>
+            <button class="botao_lista" id="deletar" (click)="deletar(cliente.id)">Deletar</button>
+        </div>
+    </div>
+    }
+</div>
+
+<!-- Cadastrar cliente -->
+<button id="cadastrar_cliente" (click)="cadastrarCliente()">+</button>

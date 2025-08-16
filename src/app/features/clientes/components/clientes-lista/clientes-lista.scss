@@ -1,0 +1,26 @@
+.item_cliente{
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+}
+
+.botao_lista{
+    padding: 10px;
+    margin: 5px;
+    font-weight: bold;
+    color: white;
+    border-style: none;
+}
+
+#atualizar{
+    background-color: purple;
+}
+
+#deletar{
+    background-color: red;
+}
+
+#cadastrar_cliente{
+    background-color: green;
+    color: white;
+    padding: 15px;
+}
