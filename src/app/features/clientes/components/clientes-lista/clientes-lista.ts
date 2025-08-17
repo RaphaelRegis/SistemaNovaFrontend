@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Cliente } from '../../models/Cliente';
 
 @Component({
   selector: 'app-clientes-lista',
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
 export class ClientesLista {
   
   // Lista mock para podermos imprimir alguns clientes
-  clientes = [
+  clientes: Cliente[] = [
     {
       id: 1,
       nome: "Raphael Regis",
@@ -27,8 +28,11 @@ export class ClientesLista {
   ]
 
   // botao para atualizar o cliente
-  atualizar(id: number) {
-    console.log("cliente " + id + " foi atualizado")
+  @Output() atualizarCliente = new EventEmitter<Cliente>;
+  atualizar(cliente: Cliente) {
+    //console.log("cliente " + JSON.stringify(cliente) + " foi atualizado")
+    this.atualizarCliente.emit(cliente);
+
   }
 
   // botao para deletar o cliente
