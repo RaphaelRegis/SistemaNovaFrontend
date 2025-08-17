@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class ClientesLista {
   
+  // Lista mock para podermos imprimir alguns clientes
   clientes = [
     {
       id: 1,
@@ -25,15 +26,15 @@ export class ClientesLista {
     }
   ]
 
+  // botao para atualizar o cliente
   atualizar(id: number) {
     console.log("cliente " + id + " foi atualizado")
   }
 
+  // botao para deletar o cliente
   deletar(id: number) {
     console.log("cliente " + id + " foi deletado")
   }
 
-  cadastrarCliente() {
-    console.log("Cadastrar cliente")
-  }
+  
 }

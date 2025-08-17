@@ -1,0 +1,18 @@
+<!-- TO DO: funcoes
+ - Implementar barra de pesquisa
+ - Implementar o cadastrar
+ - Integrar com backend -->
+
+<!-- Barra de Pesquisa -->
+<app-clientes-barra-de-pesquisa></app-clientes-barra-de-pesquisa>
+
+<!-- Lista de Clientes -->
+<app-clientes-lista></app-clientes-lista>
+
+<!-- Cadastrar cliente -->
+<button id="cadastrar_cliente" (click)="cadastrarCliente()">+</button>
+
+<!-- Modal de cadastrar clientes -->
+@if (valor) {
+    <app-modal-cadastro-cliente (modalStatus)="fecharCadastroCliente()"></app-modal-cadastro-cliente>
+}

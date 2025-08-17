@@ -1,0 +1,18 @@
+<!-- Reactive Form para cadastrar o cliente -->
+<div>
+    <form [formGroup]="formularioCliente" (ngSubmit)="submit()">
+
+        <!-- Campos do formulario -->
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" formControlName="nome">
+    
+        <label for="id_fiscal">CPF/CNPJ</label>
+        <input type="text" id="id_fiscal" formControlName="id_fiscal">
+    
+        <label for="celular">Celular</label>
+        <input type="text" id="celular" formControlName="celular">
+
+        <!-- Botao de enviar formulario -->
+        <button type="submit">Enviar</button>
+    </form>
+</div>
