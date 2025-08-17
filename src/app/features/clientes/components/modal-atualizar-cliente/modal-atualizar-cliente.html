@@ -6,7 +6,7 @@
 
         @if (editar_cliente) {
             <!-- Aqui vai o formulario para editar o cliente -->
-             <app-form-atualizar-cliente (desabilitarEdicao)="desabilitarEdicao()"></app-form-atualizar-cliente>
+             <app-form-atualizar-cliente [cliente]="cliente" (desabilitarEdicao)="desabilitarEdicao()"></app-form-atualizar-cliente>
 
         } @else {
             <!-- Aqui vai as informacoes do cliente sem habilitar edicao -->
