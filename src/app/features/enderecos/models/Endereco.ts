@@ -2,7 +2,7 @@ export interface Endereco {
     id: number,
     cidade: string,
     logradouro: string,
-    numero: number,
+    numero: string,
     divida: string,
     id_cliente: number
 }

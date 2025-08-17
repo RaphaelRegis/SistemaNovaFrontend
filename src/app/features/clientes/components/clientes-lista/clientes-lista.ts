@@ -32,7 +32,6 @@ export class ClientesLista {
   atualizar(cliente: Cliente) {
     //console.log("cliente " + JSON.stringify(cliente) + " foi atualizado")
     this.atualizarCliente.emit(cliente);
-
   }
 
   // botao para deletar o cliente
