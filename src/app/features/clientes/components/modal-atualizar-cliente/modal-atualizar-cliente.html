@@ -1,0 +1,29 @@
+<div>
+    <button (click)="fecharModal()">Fechar</button>
+
+    <div>
+        <h2>CLIENTE</h2>
+
+        @if (editar_cliente) {
+            <!-- Aqui vai o formulario para editar o cliente -->
+             <app-form-atualizar-cliente (desabilitarEdicao)="desabilitarEdicao()"></app-form-atualizar-cliente>
+
+        } @else {
+            <!-- Aqui vai as informacoes do cliente sem habilitar edicao -->
+             <div>
+                <p>Nome: {{cliente.nome}}</p>
+                <p>{{cliente.Tipo_Pessoa}}: {{cliente.id_fiscal}}</p>
+                <p>Celular: {{cliente.celular}}</p>
+             </div>
+
+             <button (click)="habilitarEdicao()">Editar</button>
+             
+        }
+
+    </div>
+
+
+
+
+
+</div>
