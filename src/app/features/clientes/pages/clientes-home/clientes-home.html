@@ -7,12 +7,17 @@
 <app-clientes-barra-de-pesquisa></app-clientes-barra-de-pesquisa>
 
 <!-- Lista de Clientes -->
-<app-clientes-lista></app-clientes-lista>
+<app-clientes-lista (atualizarCliente)="atualizarCliente($event)"></app-clientes-lista>
 
 <!-- Cadastrar cliente -->
 <button id="cadastrar_cliente" (click)="cadastrarCliente()">+</button>
 
 <!-- Modal de cadastrar clientes -->
-@if (valor) {
+@if (cadastrar_cliente) {
     <app-modal-cadastro-cliente (modalStatus)="fecharCadastroCliente()"></app-modal-cadastro-cliente>
 }
+
+<!-- Modal de atualizar clientes -->
+ @if (atualizar_cliente) {
+    <app-modal-atualizar-cliente [cliente]="cliente_selecionado" (fecharModalEvento)="fecharAtualizarCliente()"></app-modal-atualizar-cliente>
+ }
