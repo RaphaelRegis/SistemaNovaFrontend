@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ClientesHome } from './features/clientes/pages/clientes-home/clientes-home';
 import { EnderecosLista } from "./features/enderecos/components/enderecos-lista/enderecos-lista";
+import { ModalAtualizarCliente } from "./features/clientes/components/modal-atualizar-cliente/modal-atualizar-cliente";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ClientesHome, EnderecosLista],
+  imports: [RouterOutlet, ClientesHome, EnderecosLista, ModalAtualizarCliente],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

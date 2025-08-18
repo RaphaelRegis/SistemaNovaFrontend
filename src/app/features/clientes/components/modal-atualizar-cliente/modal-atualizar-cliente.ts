@@ -2,10 +2,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Cliente } from '../../models/Cliente';
 import { FormAtualizarCliente } from "../form-atualizar-cliente/form-atualizar-cliente";
 import { EnderecosLista } from "../../../enderecos/components/enderecos-lista/enderecos-lista";
+import { PedidosLista } from "../../../pedidos/components/pedidos-lista/pedidos-lista";
 
 @Component({
   selector: 'app-modal-atualizar-cliente',
-  imports: [FormAtualizarCliente, EnderecosLista],
+  imports: [FormAtualizarCliente, EnderecosLista, PedidosLista],
   templateUrl: './modal-atualizar-cliente.html',
   styleUrl: './modal-atualizar-cliente.scss'
 })
