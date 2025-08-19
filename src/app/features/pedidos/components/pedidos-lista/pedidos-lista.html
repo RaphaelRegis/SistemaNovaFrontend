@@ -1,5 +1,4 @@
 <!-- TO DO:
- - Fazer a lista de pedidos
  - Implementar a logica dos botoes de acao da lista
  
  - Implementar a lista de produtos pra ir dentro do pedido
@@ -14,3 +13,6 @@
 </div>
 
 <!-- o for para imprimir cada pedido vai bem aqui -->
+@for (pedido of pedidos; track $index) {
+    <app-bloco-pedido [pedido]="pedido"></app-bloco-pedido>
+}
