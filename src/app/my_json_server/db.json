@@ -1,0 +1,120 @@
+{
+    "clientes": [
+        {
+            "idCliente": 1,
+            "nome": "Arthur Morgan",
+            "idFiscal": "12345678901",
+            "tipoPessoa": "CPF",
+            "celular": "77345678901"
+        },
+        {
+            "idCliente": 2,
+            "nome": "John Marston",
+            "idFiscal": "09876543210",
+            "tipoPessoa": "CPF",
+            "celular": "77876543210"
+        }
+    ],
+    "enderecos": [
+        {
+            "idEndereco": 1,
+            "cidade": "Vitória da Conquista",
+            "logradouro": "Av. Regis Pacheco",
+            "numero": "10",
+            "divida": "0.0",
+            "idCliente": 1
+        },
+        {
+            "idEndereco": 2,
+            "cidade": "Boa Nova",
+            "logradouro": "Rua Padre Vicente",
+            "numero": "07",
+            "divida": "0.0",
+            "idCliente": 2
+        }
+    ],
+    "pedidos": [
+        {
+            "idTrabalho": 1,
+            "estado": "NEGOCIACAO",
+            "dataInicio": "2025-01-01",
+            "dataFim": null,
+            "valorTotal": "100.0",
+            "idEndereco": 1
+        },
+        {
+            "idTrabalho": 2,
+            "estado": "NEGOCIACAO",
+            "dataInicio": "2025-02-02",
+            "dataFim": null,
+            "valorTotal": "200.0",
+            "idEndereco": 2
+        },
+        {
+            "idTrabalho": 3,
+            "estado": "NEGOCIACAO",
+            "dataInicio": "2025-03-03",
+            "dataFim": null,
+            "valorTotal": "250.0",
+            "idEndereco": 1
+        }
+    ],
+    "produtos": [
+        {
+            "id": 1,
+            "idProduto": 1,
+            "idTrabalho": 1,
+            "altura": "3.5",
+            "largura": "2.5",
+            "valorBase": "1185.000",
+            "valorTotal": "11850.0000",
+            "estado": "PRODUTO_PLANEJADO"
+        },
+        {
+            "id": 2,
+            "idProduto": 1,
+            "idTrabalho": 2,
+            "altura": "2.0",
+            "largura": "2.0",
+            "valorBase": "1185.000",
+            "valorTotal": "11850.0000",
+            "estado": "PRODUTO_PLANEJADO"
+        },
+        {
+            "id": 3,
+            "idProduto": 1,
+            "idTrabalho": 1,
+            "altura": "3.05",
+            "largura": "2.05",
+            "valorBase": "1185.000",
+            "valorTotal": "11850.0000",
+            "estado": "PRODUTO_PLANEJADO"
+        },
+        {
+            "id": 4,
+            "idProduto": 1,
+            "idTrabalho": 2,
+            "altura": "1.0",
+            "largura": "4.0",
+            "valorBase": "1185.000",
+            "valorTotal": "11850.0000",
+            "estado": "PRODUTO_PLANEJADO"
+        }
+    ],
+    "servicos": [
+        {
+            "id": 1,
+            "valor": "250.00",
+            "descricao": "Arrumar fechadura",
+            "estado": "ATIVO",
+            "id_trabalho": 1
+        },
+        {
+            "id": 2,
+            "valor": "200.00",
+            "descricao": "Substituir trinco da janela",
+            "estado": "ATIVO",
+            "id_trabalho": 2
+        }
+    ]
+}
