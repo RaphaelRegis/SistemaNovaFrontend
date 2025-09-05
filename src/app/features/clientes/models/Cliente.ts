@@ -1,7 +1,8 @@
 export interface Cliente {
+    celular: string,
     id: number,
+    idCliente: number,
+    idFiscal: string,
     nome: string,
-    id_fiscal: string,
-    Tipo_Pessoa: string,
-    celular: string
+    tipoPessoa: string
 }

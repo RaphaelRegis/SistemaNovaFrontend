@@ -16,9 +16,10 @@ export class ClientesHome {
   cliente_selecionado: Cliente = {
     id: -1,
     nome: '',
-    id_fiscal: '',
-    Tipo_Pessoa: '',
-    celular: ''
+    idFiscal: '',
+    tipoPessoa: '',
+    celular: '',
+    idCliente: 0
   };
   cadastrar_cliente = false;
   atualizar_cliente = false;

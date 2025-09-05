@@ -8,18 +8,19 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ServiceAtualizarCliente {
   
     clienteExemplo: Cliente = {
-    id: 1,
-    nome: "Raphael Regis",
-    id_fiscal: "123.456.789-12",
-    Tipo_Pessoa: "CPF",
-    celular: "1112345-6789"
-  }
+      id: 1,
+      nome: "Raphael Regis",
+      idFiscal: "123.456.789-12",
+      tipoPessoa: "CPF",
+      celular: "1112345-6789",
+      idCliente: 0
+    }
 
   editavel_cliente: boolean = false;
 
   formularioCliente = new FormGroup({
     nome: new FormControl(this.clienteExemplo.nome),
-    id_fiscal: new FormControl(this.clienteExemplo.id_fiscal),
+    idFiscal: new FormControl(this.clienteExemplo.idFiscal),
     celular: new FormControl(this.clienteExemplo.celular)
   })
 
@@ -33,7 +34,7 @@ export class ServiceAtualizarCliente {
 
   private atualizarClienteExemplo() {
     this.clienteExemplo.nome = this.formularioCliente.value.nome ? this.formularioCliente.value.nome : "";
-    this.clienteExemplo.id_fiscal = this.formularioCliente.value.id_fiscal ? this.formularioCliente.value.id_fiscal : "";
+    this.clienteExemplo.idFiscal = this.formularioCliente.value.idFiscal ? this.formularioCliente.value.idFiscal : "";
     this.clienteExemplo.celular = this.formularioCliente.value.celular ? this.formularioCliente.value.celular : "";
   }
 
@@ -45,7 +46,7 @@ export class ServiceAtualizarCliente {
   editar() {
     this.formularioCliente = new FormGroup({
       nome: new FormControl(this.clienteExemplo.nome),
-      id_fiscal: new FormControl(this.clienteExemplo.id_fiscal),
+      idFiscal: new FormControl(this.clienteExemplo.idFiscal),
       celular: new FormControl(this.clienteExemplo.celular)
     })
     this.editavel_cliente = true;

@@ -15,7 +15,7 @@ export class FormAtualizarCliente implements OnInit {
   // formulario do cliente
   formularioCliente = new FormGroup({
     nome: new FormControl(""),
-    id_fiscal: new FormControl(""),
+    idFiscal: new FormControl(""),
     celular: new FormControl("")
   });
 
@@ -23,7 +23,7 @@ export class FormAtualizarCliente implements OnInit {
   ngOnInit(): void {
     this.formularioCliente = new FormGroup({
       nome: new FormControl(this.cliente.nome),
-      id_fiscal: new FormControl(this.cliente.id_fiscal),
+      idFiscal: new FormControl(this.cliente.idFiscal),
       celular: new FormControl(this.cliente.celular)
     })
   }

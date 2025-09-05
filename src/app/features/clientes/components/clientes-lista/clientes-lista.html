@@ -9,11 +9,11 @@
 <!-- Lista dos clientes -->
 <div>
     <!-- Percorre cada cliente encontrado -->
-    @for (cliente of clientes; track $index) {
+    @for (cliente of clientes(); track $index) {
     <div class="item_cliente">
 
         <p>Nome: {{cliente.nome}}</p>
-        <p>{{cliente.Tipo_Pessoa}}: {{cliente.id_fiscal}}</p>
+        <p>{{cliente.tipoPessoa}}: {{cliente.idFiscal}}</p>
         <p>Celular: {{cliente.celular}}</p>
     
         <!-- Botoes para atualizar/deletar o cliente -->
