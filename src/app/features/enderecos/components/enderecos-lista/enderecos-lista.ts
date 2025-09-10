@@ -1,4 +1,4 @@
-import { Component, signal, OnInit, Input, Signal, input, output } from '@angular/core';
+import { Component, signal, OnChanges, Input, Signal, input, output } from '@angular/core';
 import { Endereco } from '../../models/Endereco';
 import { EnderecosRequest } from '../../services/enderecos-request';
 
@@ -16,7 +16,7 @@ export class EnderecosLista {
   idCliente = input<number>()
   enderecos = signal<Endereco[]>([])
 
-  ngOnInit() {
+  ngOnChanges() {
     console.log("idCliente" + this.idCliente)
     this.enderecosRequestService.getEnderecosCliente(this.idCliente())
       .subscribe({
@@ -37,7 +37,7 @@ export class EnderecosLista {
 
   // funcao para selecionar o endereco
   notificarSelecaoEndereco = output<Endereco>()
-  
+
   selecionar(endereco: Endereco) {
     // manda um signal para a classe-pai contendo o endereco selecionado
     console.log("Endereco selecionado: " +  JSON.stringify(endereco))
