@@ -7,14 +7,14 @@
 
         @if (editar_cliente) {
             <!-- Aqui vai o formulario para editar o cliente -->
-             <app-form-atualizar-cliente [cliente]="cliente" (desabilitarEdicao)="desabilitarEdicao()"></app-form-atualizar-cliente>
+             <app-form-atualizar-cliente [cliente]="cliente()" (desabilitarEdicao)="desabilitarEdicao()"></app-form-atualizar-cliente>
 
         } @else {
             <!-- Aqui vai as informacoes do cliente sem habilitar edicao -->
              <div>
-                <p>Nome: {{cliente.nome}}</p>
-                <p>{{cliente.tipoPessoa}}: {{cliente.idFiscal}}</p>
-                <p>Celular: {{cliente.celular}}</p>
+                <p>Nome: {{cliente().nome}}</p>
+                <p>{{cliente().tipoPessoa}}: {{cliente().idFiscal}}</p>
+                <p>Celular: {{cliente().celular}}</p>
              </div>
 
              <button (click)="habilitarEdicao()">Editar</button>
@@ -25,7 +25,7 @@
     <!-- PARTE DOS ENDERECOS -->
      <div>
         <h2>ENDEREÇOS</h2>
-        <app-enderecos-lista></app-enderecos-lista>
+        <app-enderecos-lista [idCliente]=cliente().idCliente (notificarSelecaoEndereco)="receberSelecaoEndereco($event)"></app-enderecos-lista>
      </div>
 
      <!-- PARTE DOS PEDIDOS -->

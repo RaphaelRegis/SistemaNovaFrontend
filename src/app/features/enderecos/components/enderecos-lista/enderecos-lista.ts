@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal, OnInit, Input, Signal, input, output } from '@angular/core';
 import { Endereco } from '../../models/Endereco';
+import { EnderecosRequest } from '../../services/enderecos-request';
 
 @Component({
   selector: 'app-enderecos-lista',
@@ -9,35 +10,39 @@ import { Endereco } from '../../models/Endereco';
 })
 export class EnderecosLista {
 
-  // mock dos enderecos
-  enderecos: Endereco[] = [
-    {
-      id: 1,
-      cidade: "Boa Nova",
-      logradouro: "Rua A",
-      numero: "3",
-      divida: "10",
-      id_cliente: 1
-    },
-    {
-      id: 2,
-      cidade: "Boa Nova",
-      logradouro: "Rua B",
-      numero: "2",
-      divida: "15",
-      id_cliente: 1
-    }
-  ]
+  constructor(private enderecosRequestService: EnderecosRequest) { }
+
+  // requisita os enderecos com base no id do cliente e na inicializacao da lista
+  idCliente = input<number>()
+  enderecos = signal<Endereco[]>([])
+
+  ngOnInit() {
+    console.log("idCliente" + this.idCliente)
+    this.enderecosRequestService.getEnderecosCliente(this.idCliente())
+      .subscribe({
+        next: (data) => {
+          this.enderecos.set(data);
+          console.log(this.enderecos())
+        },
+        error: (err) => console.error("Erro ao buscar os enderecos!", err)
+
+      })
+  }
 
   // funcao para adicionar novo endereco
-  cadastrarEndereco(){
+  cadastrarEndereco() {
     console.log("Novo endereco")
   }
 
 
   // funcao para selecionar o endereco
-  selecionar() {
-    console.log("Ao selecionar, o endereco deve ir pra parte dos Pedidos")
+  notificarSelecaoEndereco = output<Endereco>()
+  
+  selecionar(endereco: Endereco) {
+    // manda um signal para a classe-pai contendo o endereco selecionado
+    console.log("Endereco selecionado: " +  JSON.stringify(endereco))
+
+    this.notificarSelecaoEndereco.emit(endereco)
   }
 
   // funcao para excluir o endereco

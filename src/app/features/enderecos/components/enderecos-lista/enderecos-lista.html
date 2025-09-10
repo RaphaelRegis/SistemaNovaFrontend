@@ -2,7 +2,7 @@
     <button (click)="cadastrarEndereco()">Novo endereco</button>
 </div>
 
-@for (endereco of enderecos; track $index) {
+@for (endereco of enderecos(); track $index) {
     <div>
         <div>
             <p>Cidade: {{endereco.cidade}}</p>
@@ -10,7 +10,7 @@
             <p>Dívida: {{endereco.divida}}</p>
         </div>
         <div>
-            <button>Editar</button>
+            <button (click)="selecionar(endereco)">Editar</button>
             <button>Excluir</button>
         </div>
     </div>

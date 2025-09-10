@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, input, model, output, Output } from '@angular/core';
 import { Cliente } from '../../models/Cliente';
 import { FormAtualizarCliente } from "../form-atualizar-cliente/form-atualizar-cliente";
 import { EnderecosLista } from "../../../enderecos/components/enderecos-lista/enderecos-lista";
 import { PedidosLista } from "../../../pedidos/components/pedidos-lista/pedidos-lista";
+import { Endereco } from '../../../enderecos/models/Endereco';
 
 @Component({
   selector: 'app-modal-atualizar-cliente',
@@ -12,15 +13,24 @@ import { PedidosLista } from "../../../pedidos/components/pedidos-lista/pedidos-
 })
 export class ModalAtualizarCliente {
 
-  // o cliente vem de quem vc selecionar no home
-  @Input() cliente!: Cliente;
-
   constructor(){
     this.editar_cliente = false;
   }
 
+  // o cliente vem de quem vc selecionar no home dos clientes
+  cliente = input.required<Cliente>();
+
+  // o endereco vem de quem vc selecionar na lista de enderecos
+  endereco = model<Endereco>();
+
+  receberSelecaoEndereco(enderecoRecebido: Endereco) {
+    this.endereco.set(enderecoRecebido)
+    console.log("Endereco recebido: " + JSON.stringify(this.endereco()))
+  }
+
+
   // Manda evento para fechar o modal
-  @Output() fecharModalEvento = new EventEmitter<Cliente>
+  fecharModalEvento = output()
 
   fecharModal(){
     this.fecharModalEvento.emit();
