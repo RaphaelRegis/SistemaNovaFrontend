@@ -21,7 +21,7 @@ export class ClientesLista {
       .subscribe({
         next: (data) => {
           this.clientes.set(data);
-          console.log(this.clientes())
+          // console.log(this.clientes())
         },
         error: (err) => console.error("Erro ao buscar clientes!", err)
       })

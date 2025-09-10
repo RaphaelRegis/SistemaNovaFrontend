@@ -42,7 +42,7 @@ export class ClientesHome {
 
   // Abre modal para atualizar cliente
   atualizarCliente(cliente: Cliente) {
-    console.log("Cliente recebido no home: " + JSON.stringify(cliente));
+    // console.log("Cliente recebido no home: " + JSON.stringify(cliente));
     this.cliente_selecionado = cliente;
     this.atualizar_cliente = true;
   }

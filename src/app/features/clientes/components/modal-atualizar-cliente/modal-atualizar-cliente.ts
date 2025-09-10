@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, model, output, Output } from '@angular/core';
+import { Component, effect, EventEmitter, input, model, output, Output } from '@angular/core';
 import { Cliente } from '../../models/Cliente';
 import { FormAtualizarCliente } from "../form-atualizar-cliente/form-atualizar-cliente";
 import { EnderecosLista } from "../../../enderecos/components/enderecos-lista/enderecos-lista";
@@ -25,7 +25,7 @@ export class ModalAtualizarCliente {
 
   receberSelecaoEndereco(enderecoRecebido: Endereco) {
     this.endereco.set(enderecoRecebido)
-    console.log("Endereco recebido: " + JSON.stringify(this.endereco()))
+    // console.log("Endereco selecionado: " + JSON.stringify(this.endereco()))
   }
 
 

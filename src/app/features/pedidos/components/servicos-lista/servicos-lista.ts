@@ -14,14 +14,14 @@ export class ServicosLista {
       valor: 0,
       descricao: '',
       estado: '',
-      id_trabalho: 0
+      idTrabalho: 0
     },
     {
       id: 0,
       valor: 0,
       descricao: '',
       estado: '',
-      id_trabalho: 0
+      idTrabalho: 0
     }
   ]
 }

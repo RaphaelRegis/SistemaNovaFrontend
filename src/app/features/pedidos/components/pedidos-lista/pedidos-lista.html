@@ -13,6 +13,6 @@
 </div>
 
 <!-- o for para imprimir cada pedido vai bem aqui -->
-@for (pedido of pedidos; track $index) {
+@for (pedido of pedidos(); track $index) {
     <app-bloco-pedido [pedido]="pedido"></app-bloco-pedido>
 }

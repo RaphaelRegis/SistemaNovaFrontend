@@ -3,5 +3,5 @@ export interface Servico {
     valor: number,
     descricao: string,
     estado: string,
-    id_trabalho: number
+    idTrabalho: number
 }

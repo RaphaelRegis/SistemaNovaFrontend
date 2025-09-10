@@ -1,8 +1,8 @@
 export interface Pedido {
-    id_trabalho: number,
+    idTrabalho: number,
     estado: string,
-    data_inicio: string,
-    data_fim: string,
-    valor_total: string,
-    id_endereco: number
+    dataInicio: string,
+    dataFim: string,
+    valorTotal: string,
+    idEndereco: number
 }

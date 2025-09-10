@@ -17,12 +17,12 @@ export class EnderecosLista {
   enderecos = signal<Endereco[]>([])
 
   ngOnChanges() {
-    console.log("idCliente" + this.idCliente)
+    // console.log("idCliente" + this.idCliente)
     this.enderecosRequestService.getEnderecosCliente(this.idCliente())
       .subscribe({
         next: (data) => {
           this.enderecos.set(data);
-          console.log(this.enderecos())
+          // console.log(this.enderecos())
         },
         error: (err) => console.error("Erro ao buscar os enderecos!", err)
 
@@ -40,7 +40,7 @@ export class EnderecosLista {
 
   selecionar(endereco: Endereco) {
     // manda um signal para a classe-pai contendo o endereco selecionado
-    console.log("Endereco selecionado: " +  JSON.stringify(endereco))
+    // console.log("Endereco selecionado: " +  JSON.stringify(endereco))
 
     this.notificarSelecaoEndereco.emit(endereco)
   }

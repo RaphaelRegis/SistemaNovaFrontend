@@ -1,6 +1,6 @@
 export interface Endereco {
     id: number,
-    idEndereco: string,
+    idEndereco: number,
     cidade: string,
     logradouro: string,
     numero: string,
