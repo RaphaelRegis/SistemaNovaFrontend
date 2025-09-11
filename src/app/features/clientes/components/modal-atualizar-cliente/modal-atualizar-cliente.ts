@@ -1,4 +1,4 @@
-import { Component, effect, EventEmitter, input, model, output, Output } from '@angular/core';
+import { Component, effect, input, model, output, OnChanges } from '@angular/core';
 import { Cliente } from '../../models/Cliente';
 import { FormAtualizarCliente } from "../form-atualizar-cliente/form-atualizar-cliente";
 import { EnderecosLista } from "../../../enderecos/components/enderecos-lista/enderecos-lista";
@@ -13,37 +13,41 @@ import { Endereco } from '../../../enderecos/models/Endereco';
 })
 export class ModalAtualizarCliente {
 
-  constructor(){
+  constructor() {
     this.editar_cliente = false;
   }
 
   // o cliente vem de quem vc selecionar no home dos clientes
   cliente = input.required<Cliente>();
 
+  
   // o endereco vem de quem vc selecionar na lista de enderecos
-  endereco = model<Endereco>();
-
-  receberSelecaoEndereco(enderecoRecebido: Endereco) {
-    this.endereco.set(enderecoRecebido)
-    // console.log("Endereco selecionado: " + JSON.stringify(this.endereco()))
+  idEndereco: number | undefined = undefined;
+  
+  ngOnChanges() {
+    // ao mudar o cliente, o endereco vira undefined
+    this.idEndereco = undefined
   }
 
+  receberSelecaoEndereco(idEnderecoRecebido: number) {
+    this.idEndereco = idEnderecoRecebido;
+  }
 
   // Manda evento para fechar o modal
   fecharModalEvento = output()
 
-  fecharModal(){
+  fecharModal() {
     this.fecharModalEvento.emit();
   }
 
   // Habilita/desabilita edicao do cliente
   editar_cliente: boolean = false;
-  
-  habilitarEdicao(){
+
+  habilitarEdicao() {
     this.editar_cliente = true;
   }
 
-  desabilitarEdicao(){
+  desabilitarEdicao() {
     this.editar_cliente = false;
   }
 

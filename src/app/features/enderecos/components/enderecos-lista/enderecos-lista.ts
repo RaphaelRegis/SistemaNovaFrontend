@@ -36,13 +36,12 @@ export class EnderecosLista {
 
 
   // funcao para selecionar o endereco
-  notificarSelecaoEndereco = output<Endereco>()
+  notificarSelecaoEndereco = output<number>()
 
-  selecionar(endereco: Endereco) {
-    // manda um signal para a classe-pai contendo o endereco selecionado
-    // console.log("Endereco selecionado: " +  JSON.stringify(endereco))
+  selecionar(idEndereco: number) {
+    // manda um signal para a classe-pai contendo o id do endereco selecionado
 
-    this.notificarSelecaoEndereco.emit(endereco)
+    this.notificarSelecaoEndereco.emit(idEndereco)
   }
 
   // funcao para excluir o endereco
