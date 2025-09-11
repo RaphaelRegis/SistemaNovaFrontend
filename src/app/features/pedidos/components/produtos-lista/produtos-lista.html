@@ -1,7 +1,10 @@
 <!-- lista com cada produto -->
-@for (produto of produtos; track $index) {
+@for (produto of produtos(); track $index) {
     <div>
-        <p>Descrição do produto</p>
+        <p>Produto: {{produto.tipoProduto}}</p>
+        <p>Altura: {{produto.altura}} | Largura: {{produto.largura}}</p>
+        <p>Valor: R$ {{produto.valorTotal}}</p>
+        <p>Estado: {{produto.estado}}</p>
         <button>Editar</button>
         <button>Excluir</button>
     </div>

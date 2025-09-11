@@ -35,7 +35,7 @@
     ],
     "pedidos": [
         {
-            "idTrabalho": 1,
+            "idPedido": 1,
             "estado": "NEGOCIACAO",
             "dataInicio": "2025-01-01",
             "dataFim": null,
@@ -43,7 +43,7 @@
             "idEndereco": 1
         },
         {
-            "idTrabalho": 2,
+            "idPedido": 2,
             "estado": "NEGOCIACAO",
             "dataInicio": "2025-02-02",
             "dataFim": null,
@@ -51,7 +51,7 @@
             "idEndereco": 2
         },
         {
-            "idTrabalho": 3,
+            "idPedido": 3,
             "estado": "NEGOCIACAO",
             "dataInicio": "2025-03-03",
             "dataFim": null,
@@ -63,7 +63,8 @@
         {
             "id": 1,
             "idProduto": 1,
-            "idTrabalho": 1,
+            "idPedido": 1,
+            "tipoProduto": "Janela",
             "altura": "3.5",
             "largura": "2.5",
             "valorBase": "1185.000",
@@ -73,7 +74,8 @@
         {
             "id": 2,
             "idProduto": 1,
-            "idTrabalho": 2,
+            "idPedido": 2,
+            "tipoProduto": "Janela",
             "altura": "2.0",
             "largura": "2.0",
             "valorBase": "1185.000",
@@ -83,7 +85,8 @@
         {
             "id": 3,
             "idProduto": 1,
-            "idTrabalho": 1,
+            "idPedido": 1,
+            "tipoProduto": "Porta",
             "altura": "3.05",
             "largura": "2.05",
             "valorBase": "1185.000",
@@ -93,7 +96,8 @@
         {
             "id": 4,
             "idProduto": 1,
-            "idTrabalho": 2,
+            "idPedido": 2,
+            "tipoProduto": "Porta",
             "altura": "1.0",
             "largura": "4.0",
             "valorBase": "1185.000",

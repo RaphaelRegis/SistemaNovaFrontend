@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Pedido } from '../../models/Pedido';
 import { ProdutosLista } from "../produtos-lista/produtos-lista";
 import { ServicosLista } from "../servicos-lista/servicos-lista";
@@ -11,5 +11,5 @@ import { ServicosLista } from "../servicos-lista/servicos-lista";
 })
 export class BlocoPedido {
 
-  @Input() pedido!: Pedido;
+  pedido = input.required<Pedido>();
 }

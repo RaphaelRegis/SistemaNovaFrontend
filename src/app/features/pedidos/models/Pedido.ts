@@ -1,5 +1,5 @@
 export interface Pedido {
-    idTrabalho: number,
+    idPedido: number,
     estado: string,
     dataInicio: string,
     dataFim: string,
