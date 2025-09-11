@@ -1,7 +1,9 @@
 <!-- lista com cada servico -->
-@for (produto of servicos; track $index) {
+@for (servico of servicos(); track $index) {
     <div>
-        <p>Descrição do servico</p>
+        <p>Descrição: {{servico.descricao}}</p>
+        <p>Valor: R${{servico.valor}}</p>
+        <p>Estado: {{servico.estado}}</p>
         <button>Editar</button>
         <button>Excluir</button>
     </div>

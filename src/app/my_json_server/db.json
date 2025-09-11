@@ -111,14 +111,14 @@
             "valor": "250.00",
             "descricao": "Arrumar fechadura",
             "estado": "ATIVO",
-            "id_trabalho": 1
+            "idPedido": 1
         },
         {
             "id": 2,
             "valor": "200.00",
             "descricao": "Substituir trinco da janela",
             "estado": "ATIVO",
-            "id_trabalho": 2
+            "idPedido": 2
         }
     ]
 }
